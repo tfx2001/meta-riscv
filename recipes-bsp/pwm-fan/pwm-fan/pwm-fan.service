@@ -1,0 +1,13 @@
+[Unit]
+Description=PWM Fan Service
+After=sysinit.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/pwm-fan start
+ExecStop=/usr/bin/pwm-fan stop
+ExecReload=/usr/bin/pwm-fan restart
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
