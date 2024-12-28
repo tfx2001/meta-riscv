@@ -51,11 +51,9 @@ SPL_NORMAL_BINARY = "u-boot-spl.bin.normal.out"
 #============================================
 # Common Image Configuration
 IMAGE_BOOT_FILES = " \
-    fw_payload.bin \
     ${KERNEL_IMAGETYPE} \
-    ${RISCV_SBI_FDT}  \
-    boot.scr.uimg \
-    vf2_uEnv.txt \
+    ${RISCV_SBI_FDT};dtbs/${KERNEL_DEVICETREE}  \
+    extlinux.conf;extlinux/extlinux.conf \
 "
 WKS_FILE ?= "visionfive2.wks"
 #============================================
